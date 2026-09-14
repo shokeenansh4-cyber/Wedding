@@ -58,3 +58,11 @@ Ask: keep ALL info unchanged, greatly improve the UI, add wedding animations
   MutationObserver (catches late-mounted nodes) + fresh 2.5s safety-net query;
   Countdown renders '00' placeholders immediately instead of returning null.
   Verified by testing agent iteration_2 (100% pass).
+
+## Mobile Support (2026-06, v4)
+- Added mobile polish in enhancements.css: halves petals under 640px, tighter
+  family/footer padding, smaller section titles, html/body overflow-x hidden.
+- globals.css already had breakpoints (600/650/700px) for envelope/hero/
+  invitation/countdown/venue.
+- Verified at 390x844, 768x1024, 1440x900 by testing agent iteration_3: 100%
+  pass, no horizontal overflow at any breakpoint.

@@ -1094,3 +1094,53 @@ body {
 @keyframes tapPulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
 .tap-text.tap-hidden { animation: none !important; opacity: 0 !important; transition: opacity 0.5s ease; }
 
+
+/* =========================================================
+   MOBILE POLISH
+   ========================================================= */
+@media (max-width: 640px) {
+  /* Lighter petals on small screens */
+  .petals-layer .petal:nth-child(even) {
+    display: none;
+  }
+
+  /* Shared section helpers */
+  .section-title {
+    font-size: clamp(34px, 10vw, 48px);
+  }
+  .section-divider {
+    margin: 20px 0 36px;
+  }
+
+  /* Family */
+  .family-section {
+    padding: 90px 16px;
+  }
+  .family-card {
+    padding: 36px 22px;
+  }
+  .family-card-name {
+    font-size: 20px;
+  }
+  .family-quote {
+    margin-top: 44px;
+    font-size: 19px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 70px 18px 56px;
+  }
+  .footer-names {
+    font-size: clamp(42px, 14vw, 64px);
+  }
+  .footer-note {
+    font-size: 18px;
+  }
+}
+
+/* Prevent any accidental horizontal scroll on mobile */
+html,
+body {
+  overflow-x: hidden;
+}
