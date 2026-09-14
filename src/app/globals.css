@@ -1,0 +1,3076 @@
+/* =========================================================
+   CINEMATIC WEDDING ENVELOPE
+   ========================================================= */
+
+.envelope-screen {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #fffaf1 0%,
+      #f8f0e3 55%,
+      #f3e7d4 100%
+    );
+
+  color: #76502f;
+}
+
+
+/* =========================================================
+   CENTER COMPOSITION
+   ========================================================= */
+
+.invitation-composition {
+  position: relative;
+  z-index: 10;
+
+  width: min(90vw, 650px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   OM SYMBOL
+   ========================================================= */
+
+.om-symbol {
+  position: relative;
+  z-index: 20;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(32px, 4vw, 48px);
+
+  line-height: 1;
+
+  color: #b88645;
+
+  margin-bottom: 16px;
+
+  text-shadow:
+    0 2px 10px rgba(184, 134, 69, 0.15);
+}
+
+
+/* =========================================================
+   YOU'RE INVITED
+   ========================================================= */
+
+.invited-text {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(10px, 1.2vw, 14px);
+
+  font-weight: 400;
+
+  color: #9a6a3c;
+
+  margin-bottom: 45px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ENVELOPE BUTTON
+   ========================================================= */
+
+.envelope-button {
+  position: relative;
+
+  width: min(78vw, 490px);
+  aspect-ratio: 1.55 / 1;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  outline: none;
+
+  -webkit-tap-highlight-color: transparent;
+
+  perspective: 1200px;
+}
+
+.envelope-button:disabled {
+  cursor: default;
+}
+
+
+/* =========================================================
+   ENVELOPE
+   ========================================================= */
+
+.envelope {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  filter:
+    drop-shadow(
+      0 22px 28px rgba(91, 57, 27, 0.18)
+    );
+
+  perspective: 1200px;
+
+  transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   MAIN ENVELOPE PAPER
+   ========================================================= */
+
+.envelope-body {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffdf7 0%,
+      #f9f0df 50%,
+      #f2e4cf 100%
+    );
+
+  border: 1px solid rgba(184, 134, 69, 0.6);
+
+  border-radius: 3px;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   INNER INVITATION CARD
+   ========================================================= */
+
+.inner-invitation-card {
+  position: absolute;
+
+  left: 10%;
+  top: 10%;
+
+  width: 80%;
+  height: 80%;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffaf0 0%,
+      #f8eddb 100%
+    );
+
+  box-shadow:
+    0 8px 22px rgba(73, 43, 20, 0.18);
+
+  border-radius: 2px;
+
+  transform-origin: bottom center;
+
+  pointer-events: none;
+}
+
+.inner-card-border {
+  width: calc(100% - 18px);
+  height: calc(100% - 18px);
+
+  border: 1px solid rgba(184, 134, 69, 0.55);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  color: #76502f;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+}
+
+.inner-card-om {
+  color: #b88645;
+
+  font-size: clamp(20px, 3vw, 30px);
+
+  margin-bottom: 3px;
+}
+
+.inner-card-small {
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(6px, 1vw, 9px);
+
+  letter-spacing: 2px;
+
+  color: #9b7043;
+}
+
+.inner-card-border strong {
+  font-size: clamp(18px, 3vw, 27px);
+
+  font-weight: 400;
+
+  color: #76502f;
+}
+
+.inner-card-and {
+  font-size: clamp(12px, 2vw, 17px);
+
+  color: #b88645;
+}
+
+.inner-card-date {
+  margin-top: 7px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: clamp(6px, 1vw, 9px);
+
+  letter-spacing: 1.5px;
+
+  color: #9b7043;
+}
+
+
+/* =========================================================
+   ENVELOPE FOLDS
+   ========================================================= */
+
+.envelope-left-fold {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+
+  border-top: min(25vw, 125px) solid transparent;
+  border-left: min(39vw, 245px) solid #efe0c9;
+
+  z-index: 5;
+}
+
+
+.envelope-right-fold {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+
+  border-top: min(25vw, 125px) solid transparent;
+  border-right: min(39vw, 245px) solid #efe0c9;
+
+  z-index: 5;
+}
+
+
+.envelope-bottom-fold {
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+
+  transform: translateX(-50%);
+
+  border-left: min(39vw, 245px) solid transparent;
+  border-right: min(39vw, 245px) solid transparent;
+  border-bottom: min(25vw, 125px) solid #f6ead7;
+
+  z-index: 6;
+}
+
+
+/* =========================================================
+   TOP FLAP
+   ========================================================= */
+
+.envelope-flap {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffaf0 0%,
+      #fbf4e8 65%,
+      #f2e3cc 100%
+    );
+
+  clip-path:
+    polygon(
+      0 0,
+      100% 0,
+      50% 100%
+    );
+
+  transform-origin: top center;
+
+  transform-style: preserve-3d;
+
+  backface-visibility: hidden;
+
+  z-index: 20;
+
+  filter:
+    drop-shadow(
+      0 1px 1px rgba(184, 134, 69, 0.25)
+    );
+}
+
+
+/* =========================================================
+   GOLD ENVELOPE BORDER
+   ========================================================= */
+
+.envelope-border {
+  position: absolute;
+
+  inset: 7px;
+
+  border: 1px solid rgba(184, 134, 69, 0.35);
+
+  z-index: 30;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   WAX SEAL WRAPPER
+   IMPORTANT:
+   The wrapper handles POSITIONING ONLY.
+   Framer Motion must not animate this element.
+   ========================================================= */
+
+.wax-seal-wrapper {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: clamp(62px, 9vw, 88px);
+  height: clamp(62px, 9vw, 88px);
+
+  transform: translate(-50%, -50%);
+
+  z-index: 50;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   WAX SEAL
+   Animation is applied to this INNER element.
+   ========================================================= */
+
+.wax-seal {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #a94b54 0%,
+      #8f3040 45%,
+      #68222d 100%
+    );
+
+  border: 4px solid #b88645;
+
+  box-shadow:
+    0 5px 12px rgba(79, 35, 35, 0.3),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.15);
+
+  color: #f8e5b9;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(25px, 4vw, 38px);
+
+  pointer-events: none;
+
+  transform-origin: center center;
+}
+
+
+/* =========================================================
+   INNER WAX-SEAL RING
+   ========================================================= */
+
+.wax-seal::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 7px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(216, 180, 119, 0.65);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   OM INSIDE WAX SEAL
+   ========================================================= */
+
+.wax-seal span {
+  position: relative;
+
+  z-index: 2;
+
+  display: block;
+
+  transform: none;
+
+  line-height: 1;
+
+  color: #f8e5b9;
+}
+
+
+/* =========================================================
+   OPENING ANIMATION
+   ========================================================= */
+
+.envelope-screen.is-opening {
+  background:
+    radial-gradient(
+      circle at center,
+      #fffaf1 0%,
+      #f8f0e3 50%,
+      #f3e7d4 100%
+    );
+}
+
+.envelope-screen.is-opening .envelope-button {
+  pointer-events: none;
+}
+
+.envelope-screen.is-opening .envelope {
+  animation:
+    envelopeLift 1.55s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+@keyframes envelopeLift {
+  0% {
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+  35% {
+    transform:
+      translateY(8px)
+      scale(1.01);
+  }
+
+  70% {
+    transform:
+      translateY(-8px)
+      scale(1.025);
+  }
+
+  100% {
+    transform:
+      translateY(-20px)
+      scale(1.04);
+  }
+}
+
+
+/* =========================================================
+   COUPLE NAMES
+   ========================================================= */
+
+.couple-names {
+  margin: 38px 0 15px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+
+  font-size: clamp(30px, 4vw, 48px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #8f5e37;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.name-divider {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  width: min(260px, 60vw);
+
+  margin-bottom: 22px;
+}
+
+
+.name-divider span {
+  display: block;
+
+  height: 1px;
+
+  flex: 1;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #b88645
+    );
+}
+
+
+.name-divider span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      #b88645
+    );
+}
+
+
+.name-divider b {
+  color: #b88645;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   TAP TEXT
+   ========================================================= */
+
+.tap-text {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(9px, 1vw, 12px);
+
+  letter-spacing: 5px;
+
+  color: #a47b52;
+
+  font-weight: 400;
+
+  padding-left: 5px;
+}
+
+
+/* =========================================================
+   MANDALA CIRCLES
+   ========================================================= */
+
+.mandala {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+
+  pointer-events: none;
+
+  border: 1px solid rgba(184, 134, 69, 0.14);
+}
+
+
+.mandala-1 {
+  width: min(75vw, 700px);
+  height: min(75vw, 700px);
+}
+
+
+.mandala-2 {
+  width: min(65vw, 600px);
+  height: min(65vw, 600px);
+}
+
+
+.mandala-3 {
+  width: min(53vw, 500px);
+  height: min(53vw, 500px);
+}
+
+
+.mandala-4 {
+  width: min(42vw, 400px);
+  height: min(42vw, 400px);
+}
+
+
+/* =========================================================
+   TOP / BOTTOM ORNAMENTS
+   ========================================================= */
+
+.top-decoration,
+.bottom-decoration {
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  z-index: 3;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  color: #c38b45;
+
+  font-family: Georgia, serif;
+
+  font-size: 8px;
+
+  gap: 5px;
+}
+
+
+/* =========================================================
+   TOP ORNAMENT
+   ========================================================= */
+
+.top-decoration {
+  top: 3vh;
+}
+
+
+/* =========================================================
+   BOTTOM ORNAMENT
+   ========================================================= */
+
+.bottom-decoration {
+  bottom: 6vh;
+
+  transform:
+    translateX(-50%)
+    rotate(180deg);
+}
+
+
+/* =========================================================
+   VERTICAL ORNAMENT LINE
+   ========================================================= */
+
+.vertical-line {
+  width: 1px;
+
+  height: 38px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(184, 134, 69, 0),
+      rgba(184, 134, 69, 0.7)
+    );
+}
+
+
+/* =========================================================
+   LOTUS ORNAMENT
+   ========================================================= */
+
+.lotus {
+  width: 30px;
+
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #c38b45;
+
+  font-size: 27px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .invited-text {
+    margin-bottom: 32px;
+  }
+
+  .envelope-button {
+    width: 84vw;
+  }
+
+  .inner-invitation-card {
+    left: 12%;
+    width: 76%;
+  }
+
+  .inner-card-border {
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+  }
+
+  .inner-card-small {
+    letter-spacing: 1px;
+  }
+
+  .inner-card-date {
+    letter-spacing: 1px;
+  }
+
+  .couple-names {
+    margin-top: 30px;
+
+    font-size: 34px;
+  }
+
+  .mandala-1 {
+    width: 115vw;
+    height: 115vw;
+  }
+
+  .mandala-2 {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .mandala-3 {
+    width: 82vw;
+    height: 82vw;
+  }
+
+  .mandala-4 {
+    width: 65vw;
+    height: 65vw;
+  }
+
+  .top-decoration {
+    top: 4vh;
+  }
+
+  .bottom-decoration {
+    bottom: 3vh;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-height: 700px) {
+
+  .top-decoration,
+  .bottom-decoration {
+    display: none;
+  }
+
+  .invited-text {
+    margin-bottom: 25px;
+  }
+
+  .couple-names {
+    margin-top: 25px;
+  }
+}
+
+/* =========================================================
+   CINEMATIC HERO SECTION
+   ========================================================= */
+
+.hero-section {
+  position: relative;
+
+  min-height: 100svh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #fffaf1 0%,
+      #f8f0e3 55%,
+      #f3e7d4 100%
+    );
+
+  color: #76502f;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: min(90vw, 800px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   OM
+   ========================================================= */
+
+.hero-om {
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(40px, 5vw, 64px);
+
+  line-height: 1;
+
+  color: #b88645;
+
+  margin-bottom: 22px;
+
+  text-shadow:
+    0 3px 15px rgba(184, 134, 69, 0.15);
+}
+
+
+/* =========================================================
+   BLESSING
+   ========================================================= */
+
+.hero-blessing {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(17px, 2vw, 23px);
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  color: #76502f;
+}
+
+
+/* =========================================================
+   SMALL DIVIDER
+   ========================================================= */
+
+.hero-small-divider {
+  height: 1px;
+
+  background: #b88645;
+
+  margin: 20px 0 26px;
+}
+
+
+/* =========================================================
+   NAMES
+   ========================================================= */
+
+.hero-names {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(12px, 2vw, 25px);
+}
+
+
+.hero-name {
+  font-family:
+    "Great Vibes",
+    cursive;
+
+  font-size: clamp(65px, 9vw, 115px);
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  color: #8f5e37;
+
+  text-shadow:
+    0 2px 10px rgba(118, 80, 47, 0.08);
+}
+
+
+.hero-ampersand {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(40px, 5vw, 65px);
+
+  font-weight: 300;
+
+  color: #b88645;
+
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   INVITATION TEXT
+   ========================================================= */
+
+.hero-invite-text {
+  margin: 30px 0 12px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(18px, 2vw, 24px);
+
+  color: #76502f;
+}
+
+
+.hero-celebrate-text {
+  margin: 0;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: clamp(9px, 1vw, 12px);
+
+  color: #9a6a3c;
+
+  font-weight: 400;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.hero-date {
+  margin-top: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  color: #8f5e37;
+}
+
+
+.hero-date > span:first-child {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(45px, 6vw, 72px);
+
+  font-weight: 300;
+
+  line-height: 1;
+}
+
+
+.hero-date > span:last-child {
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: clamp(9px, 1vw, 12px);
+
+  letter-spacing: 2px;
+
+  color: #9a6a3c;
+}
+
+
+.hero-date-middle {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: 0 20px;
+
+  border-left: 1px solid rgba(184, 134, 69, 0.4);
+  border-right: 1px solid rgba(184, 134, 69, 0.4);
+}
+
+
+.hero-date-middle span:first-child {
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: clamp(10px, 1.2vw, 14px);
+
+  letter-spacing: 3px;
+
+  color: #9a6a3c;
+}
+
+
+.hero-date-middle span:last-child {
+  margin-top: 4px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(20px, 2.5vw, 30px);
+
+  color: #8f5e37;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.hero-divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  width: min(330px, 65vw);
+
+  margin-top: 35px;
+}
+
+
+.hero-divider span {
+  height: 1px;
+
+  flex: 1;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #b88645
+    );
+}
+
+
+.hero-divider span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      #b88645
+    );
+}
+
+
+.hero-divider b {
+  font-family: Georgia, serif;
+
+  font-size: 19px;
+
+  font-weight: 400;
+
+  color: #b88645;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+   ========================================================= */
+
+.hero-scroll {
+  margin-top: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.hero-scroll span {
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #a47b52;
+}
+
+
+.hero-scroll-arrow {
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 22px;
+
+  color: #b88645;
+}
+
+
+/* =========================================================
+   HERO MANDALA
+   ========================================================= */
+
+.hero-mandala {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(184, 134, 69, 0.12);
+
+  pointer-events: none;
+}
+
+
+.hero-mandala-1 {
+  width: min(95vw, 900px);
+  height: min(95vw, 900px);
+}
+
+
+.hero-mandala-2 {
+  width: min(78vw, 740px);
+  height: min(78vw, 740px);
+}
+
+
+.hero-mandala-3 {
+  width: min(60vw, 570px);
+  height: min(60vw, 570px);
+}
+
+
+/* =========================================================
+   TOP ORNAMENT
+   ========================================================= */
+
+.hero-top-ornament {
+  position: absolute;
+
+  top: 4vh;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+  z-index: 5;
+
+  color: #c38b45;
+
+  font-size: 8px;
+}
+
+
+.hero-lotus {
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  color: #c38b45;
+
+  margin: 4px 0;
+}
+
+
+.hero-ornament-line {
+  width: 1px;
+
+  height: 35px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(184, 134, 69, 0.65)
+    );
+}
+
+
+/* =========================================================
+   BOTTOM ORNAMENT
+   ========================================================= */
+
+.hero-bottom-ornament {
+  position: absolute;
+
+  bottom: 4vh;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+  z-index: 5;
+
+  color: #c38b45;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .hero-top-ornament {
+    top: 3vh;
+  }
+
+  .hero-bottom-ornament {
+    bottom: 3vh;
+  }
+
+  .hero-names {
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+  .hero-name {
+    font-size: clamp(58px, 18vw, 85px);
+  }
+
+  .hero-ampersand {
+    font-size: 35px;
+
+    margin: 5px 0;
+  }
+
+  .hero-invite-text {
+    margin-top: 25px;
+  }
+
+  .hero-date {
+    gap: 12px;
+
+    margin-top: 30px;
+  }
+
+  .hero-date-middle {
+    padding: 0 12px;
+  }
+
+  .hero-date > span:last-child {
+    letter-spacing: 1px;
+  }
+
+  .hero-divider {
+    margin-top: 28px;
+  }
+
+  .hero-scroll {
+    margin-top: 24px;
+  }
+
+  .hero-mandala-1 {
+    width: 120vw;
+    height: 120vw;
+  }
+
+  .hero-mandala-2 {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .hero-mandala-3 {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+
+/* =========================================================
+   SMALL HEIGHT SCREENS
+   ========================================================= */
+
+@media (max-height: 700px) {
+
+  .hero-top-ornament,
+  .hero-bottom-ornament {
+    display: none;
+  }
+
+  .hero-names {
+    transform: scale(0.85);
+  }
+
+  .hero-date {
+    margin-top: 20px;
+  }
+
+  .hero-divider {
+    margin-top: 20px;
+  }
+
+  .hero-scroll {
+    margin-top: 15px;
+  }
+}
+/* =========================================================
+   INVITATION SECTION
+   ========================================================= */
+
+.invitation-section {
+  position: relative;
+
+  min-height: 100svh;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  padding: 120px 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8f0e3 0%,
+      #fffaf1 50%,
+      #f8f0e3 100%
+    );
+
+  color: #76502f;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.invitation-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: min(100%, 850px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   ORNAMENT
+   ========================================================= */
+
+.invitation-ornament {
+  font-family: Georgia, serif;
+
+  font-size: 34px;
+
+  color: #b88645;
+
+  line-height: 1;
+
+  margin-bottom: 25px;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   KICKER
+   ========================================================= */
+
+.invitation-kicker {
+  margin: 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: #a47b52;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.invitation-title {
+  margin: 25px 0 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  font-family: "Great Vibes", cursive;
+
+  font-size: clamp(60px, 8vw, 100px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #8f5e37;
+}
+
+
+.invitation-title span {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 45px;
+
+  font-weight: 300;
+
+  color: #b88645;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.invitation-divider {
+  width: min(380px, 75vw);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 35px;
+}
+
+
+.invitation-divider span {
+  height: 1px;
+
+  flex: 1;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #b88645
+    );
+}
+
+
+.invitation-divider span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      #b88645
+    );
+}
+
+
+.invitation-divider b {
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  color: #b88645;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.invitation-message {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(20px, 2.2vw, 27px);
+
+  line-height: 1.5;
+
+  color: #76502f;
+}
+
+
+.invitation-message p {
+  margin: 0;
+}
+
+
+.invitation-highlight {
+  margin-top: 22px !important;
+
+  font-size: clamp(23px, 2.7vw, 32px);
+
+  font-style: italic;
+
+  color: #8f5e37;
+}
+
+
+/* =========================================================
+   FAMILY SECTION
+   ========================================================= */
+
+.invitation-families {
+  width: 100%;
+
+  margin-top: 75px;
+
+  padding-top: 40px;
+
+  border-top: 1px solid rgba(184, 134, 69, 0.3);
+}
+
+
+.family-label {
+  margin: 0 0 35px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #a47b52;
+}
+
+
+.family-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 55px;
+}
+
+
+.family-block {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 250px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 20px;
+
+  line-height: 1.3;
+
+  color: #76502f;
+}
+
+
+.family-divider {
+  font-family: Georgia, serif;
+
+  font-size: 25px;
+
+  color: #b88645;
+}
+
+
+/* =========================================================
+   DATE CARD
+   ========================================================= */
+
+.invitation-date-card {
+  margin-top: 70px;
+
+  width: min(400px, 85vw);
+
+  padding: 30px 40px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 5px;
+
+  border-top: 1px solid #b88645;
+
+  border-bottom: 1px solid #b88645;
+
+  background:
+    rgba(255, 250, 241, 0.5);
+}
+
+
+.date-day {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+
+  color: #a47b52;
+}
+
+
+.date-number {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 65px;
+
+  line-height: 0.9;
+
+  color: #8f5e37;
+}
+
+
+.date-month {
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  color: #9a6a3c;
+}
+
+
+.date-time {
+  margin-top: 7px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 20px;
+
+  color: #76502f;
+}
+
+
+/* =========================================================
+   BOTTOM ORNAMENT
+   ========================================================= */
+
+.invitation-bottom-ornament {
+  display: flex;
+
+  gap: 8px;
+
+  margin-top: 55px;
+
+  color: #c38b45;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   BACKGROUND MANDALA
+   ========================================================= */
+
+.invitation-mandala {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(184, 134, 69, 0.09);
+
+  pointer-events: none;
+}
+
+
+.invitation-mandala-1 {
+  width: min(90vw, 900px);
+  height: min(90vw, 900px);
+}
+
+
+.invitation-mandala-2 {
+  width: min(65vw, 650px);
+  height: min(65vw, 650px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .invitation-section {
+    padding:
+      100px
+      20px;
+  }
+
+  .invitation-title {
+    flex-direction: column;
+
+    gap: 5px;
+
+    font-size: 70px;
+  }
+
+  .invitation-title span {
+    font-size: 35px;
+  }
+
+  .family-row {
+    flex-direction: column;
+
+    gap: 25px;
+  }
+
+  .family-block {
+    min-width: 0;
+
+    font-size: 19px;
+  }
+
+  .family-divider {
+    transform: rotate(90deg);
+  }
+
+  .invitation-families {
+    margin-top: 55px;
+  }
+
+  .invitation-date-card {
+    margin-top: 55px;
+
+    padding:
+      25px
+      20px;
+  }
+}
+/* =========================================================
+   COUNTDOWN SECTION
+   ========================================================= */
+
+.countdown-section {
+  position: relative;
+
+  min-height: 80svh;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  padding: 110px 20px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #fffaf1 0%,
+      #f8f0e3 60%,
+      #f3e7d4 100%
+    );
+
+  color: #76502f;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.countdown-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: min(100%, 900px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   ORNAMENT
+   ========================================================= */
+
+.countdown-ornament {
+  font-family: Georgia, serif;
+
+  font-size: 32px;
+
+  color: #b88645;
+
+  transform: rotate(180deg);
+
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   KICKER
+   ========================================================= */
+
+.countdown-kicker {
+  margin: 0;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: #a47b52;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.countdown-title {
+  margin: 24px 0 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(28px, 4vw, 46px);
+
+  font-weight: 400;
+
+  line-height: 1.15;
+
+  color: #76502f;
+}
+
+
+.countdown-title span {
+  font-style: italic;
+
+  color: #8f5e37;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.countdown-divider {
+  width: min(360px, 70vw);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin: 30px 0 45px;
+}
+
+
+.countdown-divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #b88645
+    );
+}
+
+
+.countdown-divider span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      #b88645
+    );
+}
+
+
+.countdown-divider b {
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+
+  color: #b88645;
+
+  font-weight: 400;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   COUNTDOWN GRID
+   ========================================================= */
+
+.countdown-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  max-width: 720px;
+}
+
+
+/* =========================================================
+   COUNTDOWN ITEM
+   ========================================================= */
+
+.countdown-item {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 130px;
+}
+
+
+.countdown-item:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  top: 20%;
+
+  width: 1px;
+
+  height: 60%;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(184, 134, 69, 0.45),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   NUMBER
+   ========================================================= */
+
+.countdown-number {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(48px, 6vw, 75px);
+
+  font-weight: 300;
+
+  line-height: 0.9;
+
+  color: #8f5e37;
+
+  font-variant-numeric:
+    tabular-nums;
+
+  min-width: 90px;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.countdown-label {
+  margin-top: 13px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #a47b52;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.countdown-date {
+  margin-top: 50px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 16px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+
+  color: #9a6a3c;
+}
+
+
+.countdown-date b {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 35px;
+
+  font-weight: 400;
+
+  color: #8f5e37;
+}
+
+
+.countdown-date i {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 20px;
+
+  font-style: normal;
+
+  letter-spacing: 0;
+
+  color: #76502f;
+}
+
+
+/* =========================================================
+   BOTTOM ORNAMENT
+   ========================================================= */
+
+.countdown-bottom-ornament {
+  margin-top: 45px;
+
+  font-size: 9px;
+
+  letter-spacing: 5px;
+
+  color: #c38b45;
+}
+
+
+/* =========================================================
+   BACKGROUND MANDALAS
+   ========================================================= */
+
+.countdown-mandala {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(184, 134, 69, 0.08);
+
+  pointer-events: none;
+}
+
+
+.countdown-mandala-1 {
+  width: min(90vw, 900px);
+  height: min(90vw, 900px);
+}
+
+
+.countdown-mandala-2 {
+  width: min(65vw, 650px);
+  height: min(65vw, 650px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .countdown-section {
+    min-height: 90svh;
+
+    padding:
+      90px
+      15px;
+  }
+
+
+  .countdown-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    row-gap: 30px;
+  }
+
+
+  .countdown-item {
+    min-height: 110px;
+  }
+
+
+  .countdown-item:nth-child(2)::after {
+    display: none;
+  }
+
+
+  .countdown-item:nth-child(1)::after,
+  .countdown-item:nth-child(3)::after {
+    height: 70%;
+
+    top: 15%;
+  }
+
+
+  .countdown-number {
+    font-size: 55px;
+  }
+
+
+  .countdown-label {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .countdown-date {
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 40px;
+  }
+
+
+  .countdown-date b {
+    font-size: 30px;
+  }
+}
+
+/* =========================================================
+   VENUE & LOCATION SECTION
+   ========================================================= */
+
+.venue-section {
+  position: relative;
+
+  min-height: 100svh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  padding: 120px 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8f0e3 0%,
+      #fffaf1 50%,
+      #f8f0e3 100%
+    );
+
+  color: #76502f;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.venue-content {
+  position: relative;
+
+  z-index: 10;
+
+  width: min(100%, 1000px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   KICKER
+   ========================================================= */
+
+.venue-kicker {
+  margin: 0;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+
+  color: #a47b52;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.venue-title {
+  margin: 20px 0 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(42px, 6vw, 68px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #8f5e37;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.venue-divider {
+  width: min(330px, 70vw);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin: 28px 0 50px;
+}
+
+.venue-divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent,
+      #b88645
+    );
+}
+
+.venue-divider span:last-child {
+  background:
+    linear-gradient(
+      to left,
+      transparent,
+      #b88645
+    );
+}
+
+.venue-divider b {
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+
+  font-weight: 400;
+
+  color: #b88645;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   VENUE CARD
+   ========================================================= */
+
+.venue-card {
+  width: min(100%, 850px);
+
+  display: grid;
+
+  grid-template-columns:
+    1.35fr
+    0.85fr;
+
+  min-height: 390px;
+
+  border:
+    1px solid
+    rgba(184, 134, 69, 0.4);
+
+  background:
+    rgba(255, 250, 241, 0.72);
+
+  box-shadow:
+    0 20px 50px
+    rgba(91, 57, 27, 0.08);
+}
+
+
+/* =========================================================
+   VENUE INFORMATION
+   ========================================================= */
+
+.venue-information {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 55px 45px;
+
+  border-right:
+    1px solid
+    rgba(184, 134, 69, 0.25);
+}
+
+.venue-icon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(184, 134, 69, 0.55);
+
+  color: #b88645;
+
+  margin-bottom: 22px;
+}
+
+.venue-label {
+  margin: 0 0 13px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #a47b52;
+}
+
+.venue-information h3 {
+  margin: 0;
+
+  max-width: 440px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(27px, 3.5vw, 39px);
+
+  font-weight: 400;
+
+  line-height: 1.1;
+
+  color: #8f5e37;
+}
+
+.venue-gold-line {
+  width: 50px;
+
+  height: 1px;
+
+  margin: 20px 0;
+
+  background: #b88645;
+}
+
+.venue-address {
+  margin: 0;
+
+  max-width: 360px;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 20px;
+
+  line-height: 1.4;
+
+  color: #76502f;
+}
+
+.venue-city {
+  margin: 8px 0 0;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #a47b52;
+}
+
+
+/* =========================================================
+   DIRECTIONS BUTTON
+   ========================================================= */
+
+.venue-directions {
+  margin-top: 30px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 13px 23px;
+
+  border:
+    1px solid
+    rgba(184, 134, 69, 0.7);
+
+  color: #8f5e37;
+
+  text-decoration: none;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.venue-directions:hover {
+  background: #8f5e37;
+
+  color: #fffaf1;
+
+  box-shadow:
+    0 8px 20px
+    rgba(91, 57, 27, 0.14);
+}
+
+
+/* =========================================================
+   QR AREA
+   ========================================================= */
+
+.venue-qr-area {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px 30px;
+}
+
+.venue-qr-frame {
+  position: relative;
+
+  width: 205px;
+  height: 205px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px;
+
+  background: #fffdf7;
+
+  border:
+    1px solid
+    rgba(184, 134, 69, 0.55);
+
+  box-shadow:
+    0 12px 30px
+    rgba(91, 57, 27, 0.1);
+}
+
+.venue-qr {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+.venue-qr-loading {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #f8f0e3;
+}
+
+.venue-qr-loading span {
+  width: 24px;
+  height: 24px;
+
+  border:
+    2px solid
+    rgba(184, 134, 69, 0.25);
+
+  border-top-color: #b88645;
+
+  border-radius: 50%;
+
+  animation:
+    venueQrSpin 0.8s linear infinite;
+}
+
+@keyframes venueQrSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.venue-qr-title {
+  margin: 22px 0 6px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #8f5e37;
+}
+
+.venue-qr-text {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 17px;
+
+  line-height: 1.25;
+
+  color: #a47b52;
+}
+
+
+/* =========================================================
+   WEDDING DATE
+   ========================================================= */
+
+.venue-date {
+  margin-top: 55px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 17px;
+
+  color: #9a6a3c;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+.venue-date b {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 48px;
+
+  font-weight: 400;
+
+  line-height: 0.8;
+
+  color: #8f5e37;
+}
+
+.venue-date i {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 19px;
+
+  font-style: normal;
+
+  letter-spacing: 0;
+
+  color: #76502f;
+}
+
+
+/* =========================================================
+   ORNAMENTS
+   ========================================================= */
+
+.venue-top-ornament {
+  position: absolute;
+
+  top: 4vh;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 4px;
+
+  z-index: 5;
+
+  color: #c38b45;
+
+  font-size: 8px;
+}
+
+.venue-lotus {
+  font-family: Georgia, serif;
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  color: #c38b45;
+
+  margin: 4px 0;
+}
+
+.venue-ornament-line {
+  width: 1px;
+
+  height: 35px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(184, 134, 69, 0.65)
+    );
+}
+
+.venue-bottom-ornament {
+  margin-top: 45px;
+
+  display: flex;
+
+  gap: 8px;
+
+  color: #c38b45;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   BACKGROUND MANDALAS
+   ========================================================= */
+
+.venue-mandala {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(184, 134, 69, 0.08);
+
+  pointer-events: none;
+}
+
+.venue-mandala-1 {
+  width: min(90vw, 900px);
+  height: min(90vw, 900px);
+}
+
+.venue-mandala-2 {
+  width: min(70vw, 700px);
+  height: min(70vw, 700px);
+}
+
+.venue-mandala-3 {
+  width: min(50vw, 500px);
+  height: min(50vw, 500px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .venue-section {
+    padding:
+      100px
+      15px;
+  }
+
+  .venue-card {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .venue-information {
+    padding:
+      45px
+      25px;
+
+    border-right: none;
+
+    border-bottom:
+      1px solid
+      rgba(184, 134, 69, 0.25);
+  }
+
+  .venue-qr-area {
+    padding:
+      40px
+      20px;
+  }
+
+  .venue-qr-frame {
+    width: 185px;
+    height: 185px;
+  }
+
+  .venue-date {
+    flex-wrap: wrap;
+
+    max-width: 340px;
+
+    line-height: 1.5;
+  }
+
+  .venue-date b {
+    font-size: 42px;
+  }
+
+  .venue-title {
+    font-size: 48px;
+  }
+
+  .venue-mandala-1 {
+    width: 120vw;
+    height: 120vw;
+  }
+
+  .venue-mandala-2 {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .venue-mandala-3 {
+    width: 75vw;
+    height: 75vw;
+  }
+
+  .venue-top-ornament {
+    top: 3vh;
+  }
+}
+
+
+/* =========================================================
+   SMALL HEIGHT SCREENS
+   ========================================================= */
+
+@media (max-height: 700px) {
+
+  .venue-top-ornament {
+    display: none;
+  }
+
+  .venue-section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
