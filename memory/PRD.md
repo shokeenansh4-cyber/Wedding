@@ -29,11 +29,15 @@ Ask: keep ALL info unchanged, greatly improve the UI, add wedding animations
 
 ## Implemented (2026-06)
 - Envelope intro (tap-to-open) -> full one-page site.
-- Sections: Hero, Invitation, Countdown (live), Celebrations/Events (4 cards),
-  Gallery (grid + lightbox), Family (both families), Venue (QR), RSVP, Footer.
-- Global: Navbar (smooth-scroll + mobile menu), FloatingPetals (rose/gold),
-  MusicPlayer (floating toggle).
+- Sections: Hero, Invitation, Countdown (live), Family (both families),
+  Venue (QR), Footer. Global: FloatingPetals (rose/gold).
 - Verified by testing agent: 100% frontend pass.
+
+## Changes (2026-06, v2)
+- REMOVED at user request: Celebrations/Events section, Gallery ("Our Story in
+  Frames"), RSVP ("Will You Join Us"), Navbar (site is scroll-only now), and the
+  MusicPlayer. Component files deleted: Events.tsx, Gallery.tsx, RSVP.tsx,
+  Navbar.tsx, MusicPlayer.tsx.
 
 ## Wedding Info (must stay correct)
 - Names: Rishabh & Ritul. Date: Friday 04 December 2026, 7:00 PM.
@@ -41,14 +45,8 @@ Ask: keep ALL info unchanged, greatly improve the UI, add wedding animations
 - Families: Mrs. Kalyani Jha & Mr. Rakesh Roshan Jha; Mrs. Pragya Jha & Dr. Mithilesh K. Thakur.
 
 ## MOCKED / Placeholders
-- RSVP submissions stored in browser localStorage only (NO backend persistence).
-- Music track is an external SoundHelix sample MP3 (placeholder — user should replace).
-- Ceremony dates/times for Mehndi/Haldi&Sangeet/Reception are tasteful placeholders
-  (only the Wedding Ceremony 04 Dec 7:00 PM is confirmed) — user should edit in
-  /app/src/components/Events.tsx.
-- Gallery photos are Unsplash stock — replace with the couple's real photos.
+(RSVP, Music, Events, Gallery were removed in v2 — no longer applicable.)
 
 ## Backlog / Next
-- P1: Real RSVP backend (persist responses).
-- P2: Replace gallery stock photos + confirm ceremony schedule.
-- P2: Self-host background music track.
+- P1: Optional enhancements the user may want later (photo slideshow, venue map
+  embed, guest wishes wall).
