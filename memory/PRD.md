@@ -50,3 +50,11 @@ Ask: keep ALL info unchanged, greatly improve the UI, add wedding animations
 ## Backlog / Next
 - P1: Optional enhancements the user may want later (photo slideshow, venue map
   embed, guest wishes wall).
+
+## Bug Fix (2026-06, v3)
+- FIXED blank-page bug: ScrollReveal v1 scanned [data-reveal] once at mount;
+  Countdown returned null until its timer initialized, so its reveal children
+  mounted after the scan and stayed invisible. Fix: ScrollReveal now uses
+  MutationObserver (catches late-mounted nodes) + fresh 2.5s safety-net query;
+  Countdown renders '00' placeholders immediately instead of returning null.
+  Verified by testing agent iteration_2 (100% pass).

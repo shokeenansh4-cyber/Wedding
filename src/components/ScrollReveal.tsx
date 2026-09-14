@@ -4,17 +4,16 @@ import { useEffect } from "react";
 
 /**
  * Reliable scroll-reveal: adds `.is-visible` to any `[data-reveal]` element
- * when it enters the viewport. Pure IntersectionObserver — no animation library.
- * Includes a safety fallback so content is never permanently hidden.
+ * when it enters the viewport. Uses IntersectionObserver + a MutationObserver
+ * so elements that mount later (e.g. after client-side state resolves) are
+ * still revealed. A safety net force-reveals everything shortly after mount.
  */
 export default function ScrollReveal() {
   useEffect(() => {
-    const els = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-reveal]")
-    );
-
     if (!("IntersectionObserver" in window)) {
-      els.forEach((el) => el.classList.add("is-visible"));
+      document
+        .querySelectorAll("[data-reveal]")
+        .forEach((el) => el.classList.add("is-visible"));
       return;
     }
 
@@ -30,15 +29,33 @@ export default function ScrollReveal() {
       { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
 
-    els.forEach((el) => io.observe(el));
+    const observed = new WeakSet<Element>();
 
-    // Safety net: reveal everything after 2.5s no matter what.
+    const scan = () => {
+      document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => {
+        if (!observed.has(el)) {
+          observed.add(el);
+          io.observe(el);
+        }
+      });
+    };
+
+    scan();
+
+    // Catch elements that mount after the initial scan (async state, etc.)
+    const mo = new MutationObserver(() => scan());
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    // Safety net: reveal everything (fresh query) after 2.5s no matter what.
     const t = setTimeout(() => {
-      els.forEach((el) => el.classList.add("is-visible"));
+      document
+        .querySelectorAll("[data-reveal]")
+        .forEach((el) => el.classList.add("is-visible"));
     }, 2500);
 
     return () => {
       io.disconnect();
+      mo.disconnect();
       clearTimeout(t);
     };
   }, []);
