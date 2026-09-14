@@ -66,3 +66,9 @@ Ask: keep ALL info unchanged, greatly improve the UI, add wedding animations
   invitation/countdown/venue.
 - Verified at 390x844, 768x1024, 1440x900 by testing agent iteration_3: 100%
   pass, no horizontal overflow at any breakpoint.
+
+## Side Diya Lamps (2026-06, v5)
+- Added SideLamps.tsx: 3 circular gold-framed diya medallions per side (left &
+  right), fixed position, warm flickering glow + gentle sway, pointer-events
+  none, z-index 5, hidden under 1150px. Diya image is AI-generated (JPEG, full
+  scene) framed in circles. Verified iteration_4: 100% pass.

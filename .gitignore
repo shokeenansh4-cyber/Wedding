@@ -1,2 +1,9 @@
 node_modules
 .next
+.env
+.env.*
+*.env
+credentials.json
+*.pem
+*.key
+.credentials

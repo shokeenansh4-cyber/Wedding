@@ -1144,3 +1144,101 @@ html,
 body {
   overflow-x: hidden;
 }
+
+/* =========================================================
+   SIDE DIYA LAMPS — traditional lamps filling left/right space
+   ========================================================= */
+.side-lamps {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+  width: 150px;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8vh 0;
+}
+.side-lamps-left {
+  left: 12px;
+}
+.side-lamps-right {
+  right: 12px;
+}
+
+.lamp-medallion {
+  position: absolute;
+  left: 50%;
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+.side-lamps .lamp-medallion:nth-child(1) { top: 10%; }
+.side-lamps .lamp-medallion:nth-child(2) { top: 42%; }
+.side-lamps .lamp-medallion:nth-child(3) { top: 74%; }
+
+.lamp-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.lamp-frame {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(184, 134, 69, 0.85);
+  box-shadow:
+    inset 0 0 0 4px rgba(255, 250, 241, 0.55),
+    inset 0 0 0 6px rgba(184, 134, 69, 0.45),
+    0 10px 26px rgba(91, 57, 27, 0.22);
+}
+
+/* Warm flickering glow like a real flame */
+.lamp-glow {
+  position: absolute;
+  inset: -26px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 42%,
+    rgba(255, 190, 92, 0.55) 0%,
+    rgba(255, 160, 60, 0.22) 38%,
+    rgba(255, 160, 60, 0) 70%
+  );
+  animation: lampFlicker 2.8s ease-in-out infinite;
+  animation-delay: var(--flicker-delay, 0s);
+}
+@keyframes lampFlicker {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  25% { opacity: 1; transform: scale(1.06); }
+  55% { opacity: 0.65; transform: scale(0.97); }
+  80% { opacity: 0.95; transform: scale(1.03); }
+}
+
+/* Gentle sway */
+.lamp-medallion {
+  animation: lampSway 7s ease-in-out infinite;
+  animation-delay: var(--flicker-delay, 0s);
+}
+@keyframes lampSway {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-7px); }
+}
+
+/* Hide on smaller screens where content fills the width */
+@media (max-width: 1150px) {
+  .side-lamps {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lamp-glow,
+  .lamp-medallion {
+    animation: none !important;
+  }
+}
